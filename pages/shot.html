@@ -1,0 +1,48 @@
+<div class="col-md-12">
+    <div class="row">
+        <div class="col-md-2 pull-left">
+            <img ng-src="{{ shot.player.avatar_url }}" alt="Avatar of {{ shot.player.name }}" width="100px" height="100px"/>
+        </div>
+        <div class="col-md-6">
+            <h1>{{ shot.title }}</h1>
+            <p>{{ "CREATED_BY" | translate }} <a href="#/player/{{ shot.player.id }}">{{ shot.player.name }}</a></p>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-9">
+    <div class="row">
+        <div class="col-md-12 image">
+            <img ng-src="{{ shot.image_url }}" alt="{{ shot.title }} par {{ shot.player.name }}" class="img-responsive"/>
+        </div>
+    </div>
+    <div class="row" ng-show="comments">
+        <div class="col-md-6">
+            <h2>{{ "COMMENTS" | translate }}</h2>
+            <shot-comments></shot-comments>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-3 other_works">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">{{ "OTHER_WORKS" | translate }}</h3>
+        </div>
+        <div class="panel-body">
+            <div ng-repeat="shotPlayer in shotsPlayer.shots" ng-show="shotPlayer.id != shot.id" class="other_project">
+                <div class="row">
+                    <div class="col-md-5">
+                        <a href="#/shot/{{ shotPlayer.id }}">
+                            <img ng-src="{{ shotPlayer.image_url }}" alt="{{ shotPlayer.title }} par {{ shotPlayer.player.name }}" class="img-responsive"/>
+                        </a>
+                    </div>
+                    <div class="col-md-7">
+                        <h5>{{ shotPlayer.title | limitTo: 15}}</h5>
+                        <h6>Le 3 Dec, 2014</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

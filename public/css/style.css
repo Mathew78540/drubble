@@ -1,0 +1,15 @@
+html {
+    overflow-y: scroll;
+}
+.stat{
+    display: inline-block;
+}
+.image, .other_works{
+    margin-top: 1.5em;
+}
+.other_project{
+    margin-bottom: 1em;
+}
+.change_language{
+    cursor: pointer;
+}

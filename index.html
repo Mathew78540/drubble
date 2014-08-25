@@ -1,0 +1,59 @@
+<!doctype>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Drubble</title>
+    <link rel="stylesheet" href="public/css/bootstrap.css"/>
+    <link rel="stylesheet" href="public/css/style.css"/>
+    <base href="/">
+</head>
+<body ng-app="drubble">
+    <!-- NAV -->
+    <div class="navbar navbar-inverse">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-inverse-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">{{ "DRUBBLE" | translate }}</a>
+        </div>
+        <div class="navbar-collapse collapse navbar-inverse-collapse">
+            <ul class="nav navbar-nav">
+                <li active-link><a href="#/popular">{{ "POPULAR" | translate }}</a></li>
+                <li active-link><a href="#/debuts">{{ "DEBUTS" | translate }}</a></li>
+                <li active-link><a href="#/everyone">{{ "EVERYONE" | translate }}</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right" ng-controller="LanguageController">
+                <li><a ng-click="change('fr')" class="change_language">FR</a></li>
+                <li><a ng-click="change('en')" class="change_language">EN</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- Container -->
+    <div class="container">
+
+        <div class="jumbotron">
+            <h1>{{ "DRUBBLE" | translate }}</h1>
+            <p>{{ "CATCH" | translate }}</p>
+            <p><a class="btn btn-primary btn-md" href="http://dribbble.com">{{ "WEBSITE_DRIBBLE" | translate }}</a></p>
+        </div>
+
+        <div class="row">
+            <ng-view></ng-view>
+        </div>
+    </div>
+
+    <!-- JS -->
+    <script src="public/js/lib/jquery.min.js"></script>
+    <script src="public/js/lib/bootstrap.min.js"></script>
+    <script src="public/js/lib/angular.min.js"></script>
+    <script src="public/js/lib/angular-route.js"></script>
+    <script src="public/js/lib/angular-translate.js"></script>
+    <script src="public/js/lib/angular-translate-loader-url.js"></script>
+    <script src="public/js/app/app.js"></script>
+    <script src="public/js/app/controllers.js"></script>
+    <script src="public/js/app/directives.js"></script>
+    <script src="public/js/app/services.js"></script>
+</body>
+</html>
