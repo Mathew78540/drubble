@@ -29,10 +29,12 @@ controllers.controller('ShotController', function($routeParams, $scope, $http, d
 
 });
 
-controllers.controller('LanguageController', function($translate, $scope){
+controllers.controller('LanguageController', function($translate, $scope, languages){
 
-    $scope.change = function(language){
-        $translate.use(language);
+    $scope.change = function(value){
+        $translate.use(value);
     }
+
+    $scope.languages = languages.languages_available;
 
 });

@@ -32,10 +32,8 @@ services.factory('drubble', function($http){
 
 });
 
-services.factory('languages', function($translate){
+services.factory('languages', function(){
     return{
-        change: function(language){
-            $translate.use(language);
-        }
+        languages_available: ['fr', 'en']
     }
 });

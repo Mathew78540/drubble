@@ -25,8 +25,7 @@
                 <li active-link><a href="#/everyone">{{ "EVERYONE" | translate }}</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right" ng-controller="LanguageController">
-                <li><a ng-click="change('fr')" class="change_language">FR</a></li>
-                <li><a ng-click="change('en')" class="change_language">EN</a></li>
+                <li ng-repeat="language in languages"><a ng-click="change(language)" class="change_language">{{ language | uppercase}}</a></li>
             </ul>
         </div>
     </div>
