@@ -1,15 +1,19 @@
 html {
     overflow-y: scroll;
 }
-.stat{
+
+.stat {
     display: inline-block;
 }
-.image, .other_works{
+
+.image, .other_works {
     margin-top: 1.5em;
 }
-.other_project{
+
+.other_project {
     margin-bottom: 1em;
 }
-.change_language{
+
+.change_language {
     cursor: pointer;
 }

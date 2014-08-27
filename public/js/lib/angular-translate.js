@@ -608,14 +608,17 @@ angular.module('pascalprecht.translate').provider('$translate', [
                         throw new Error('Couldn\'t refresh translation table, no loader registered!');
                     }
                     var deferred = $q.defer();
+
                     function resolve() {
                         deferred.resolve();
                         $rootScope.$emit('$translateRefreshEnd');
                     }
+
                     function reject() {
                         deferred.reject();
                         $rootScope.$emit('$translateRefreshEnd');
                     }
+
                     $rootScope.$emit('$translateRefreshStart');
                     if (!langKey) {
                         var tables = [];

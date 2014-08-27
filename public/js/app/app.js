@@ -9,9 +9,9 @@ var app = angular.module('drubble', [
 ]);
 
 /*
-    ROUTES
-*/
-app.config(function($routeProvider, $locationProvider){
+ ROUTES
+ */
+app.config(function ($routeProvider, $locationProvider) {
 
     //$locationProvider.html5Mode(true);
 
@@ -24,14 +24,14 @@ app.config(function($routeProvider, $locationProvider){
             templateUrl: '/pages/home.html',
             controller: 'ShotsListController'
         })
-        .otherwise({redirectTo:'/popular'});
+        .otherwise({redirectTo: '/popular'});
 
 });
 
 /*
-    TRANSLATE
-*/
-app.config(function($translateProvider){
+ TRANSLATE
+ */
+app.config(function ($translateProvider) {
 
     $translateProvider.useStaticFilesLoader({
         prefix: 'public/languages/',
