@@ -22,13 +22,13 @@ directives.directive('activeLink', function($location){
 directives.directive('shotComments', function(){
     return{
         restrict: 'E',
-        templateUrl: '/pages/includes/comments.html'
+        templateUrl: 'pages/includes/comments.html'
     }
 });
 
 directives.directive('shots', function(){
    return{
        restrict: 'E',
-       templateUrl: '/pages/includes/shots.html'
+       templateUrl: 'pages/includes/shots.html'
    }
 });
