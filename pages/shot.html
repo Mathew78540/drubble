@@ -7,7 +7,7 @@
         <div class="col-md-6">
             <h1>{{ shot.title }}</h1>
 
-            <p>{{ "CREATED" | translate }} <a href="#/player/{{ shot.player.id }}">{{ shot.player.name }}</a></p>
+            <p>{{ "CREATED" | translate }} <a href="/player/{{ shot.player.id }}">{{ shot.player.name }}</a></p>
         </div>
     </div>
 </div>
@@ -36,7 +36,7 @@
             <div ng-repeat="shotPlayer in shotsPlayer.shots" ng-show="shotPlayer.id != shot.id" class="other_project">
                 <div class="row">
                     <div class="col-md-5">
-                        <a href="#/shot/{{ shotPlayer.id }}">
+                        <a href="/shot/{{ shotPlayer.id }}">
                             <img ng-src="{{ shotPlayer.image_url }}"
                                  alt="{{ shotPlayer.title }} par {{ shotPlayer.player.name }}" class="img-responsive"/>
                         </a>

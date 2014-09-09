@@ -13,8 +13,6 @@ var app = angular.module('drubble', [
  */
 app.config(function ($routeProvider, $locationProvider) {
 
-    //$locationProvider.html5Mode(true);
-
     $routeProvider
         .when('/shot/:id', {
             templateUrl: '/pages/shot.html',
@@ -26,6 +24,9 @@ app.config(function ($routeProvider, $locationProvider) {
         })
         .otherwise({redirectTo: '/popular'});
 
+    $locationProvider.html5Mode(true);
+    $locationProvider.hashPrefix('!');
+
 });
 
 /*
@@ -34,10 +35,10 @@ app.config(function ($routeProvider, $locationProvider) {
 app.config(function ($translateProvider) {
 
     $translateProvider.useStaticFilesLoader({
-        prefix: 'public/languages/',
+        prefix: '/public/languages/',
         suffix: '.json'
     });
 
     $translateProvider.preferredLanguage('fr');
 
-})
+});

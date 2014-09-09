@@ -2,59 +2,56 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <meta name="fragment" content="!"> <!-- Use for SEO and Prerender.io -->
+    <meta name=viewport content="width=device-width, initial-scale=1">
     <title>Drubble</title>
-    <link rel="stylesheet" href="public/css/bootstrap.css"/>
-    <link rel="stylesheet" href="public/css/style.css"/>
+    <link rel="stylesheet" href="public/css/main.css"/>
 </head>
 <body ng-app="drubble">
-<!-- NAV -->
-<div class="navbar navbar-inverse">
-    <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-inverse-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#">{{ "DRUBBLE" | translate }}</a>
+    <!-- NAV -->
+    <div class="navbar navbar-inverse">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-inverse-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">{{ "DRUBBLE" | translate }}</a>
+        </div>
+        <div class="navbar-collapse collapse navb   ar-inverse-collapse">
+            <ul class="nav navbar-nav">
+                <li active-link><a href="/popular">{{ "POPULAR" | translate }}</a></li>
+                <li active-link><a href="/debuts">{{ "DEBUTS" | translate }}</a></li>
+                <li active-link><a href="/everyone">{{ "EVERYONE" | translate }}</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right" ng-controller="LanguageController">
+                <li ng-repeat="language in languages">
+                    <a ng-click="change(language)" class="change_language">{{ language | uppercase}}</a>
+                </li>
+            </ul>
+        </div>
     </div>
-    <div class="navbar-collapse collapse navbar-inverse-collapse">
-        <ul class="nav navbar-nav">
-            <li active-link><a href="#/popular">{{ "POPULAR" | translate }}</a></li>
-            <li active-link><a href="#/debuts">{{ "DEBUTS" | translate }}</a></li>
-            <li active-link><a href="#/everyone">{{ "EVERYONE" | translate }}</a></li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right" ng-controller="LanguageController">
-            <li ng-repeat="language in languages"><a ng-click="change(language)" class="change_language">{{ language |
-                uppercase}}</a></li>
-        </ul>
-    </div>
-</div>
-<!-- Container -->
-<div class="container">
+    <!-- Container -->
+    <div class="container">
 
-    <div class="jumbotron">
-        <h1>{{ "DRUBBLE" | translate }}</h1>
+        <div class="jumbotron">
+            <h1>{{ "DRUBBLE" | translate }}</h1>
 
-        <p>{{ "CATCH" | translate }}</p>
+            <p>{{ "CATCH" | translate }}</p>
 
-        <p><a class="btn btn-primary btn-md" href="http://dribbble.com">{{ "WEBSITE_DRIBBLE" | translate }}</a></p>
+            <p><a class="btn btn-primary btn-md" href="http://dribbble.com">{{ "WEBSITE_DRIBBLE" | translate }}</a></p>
+        </div>
+
+        <div class="row">
+            <ng-view></ng-view>
+        </div>
     </div>
 
-    <div class="row">
-        <ng-view></ng-view>
-    </div>
-</div>
+    <footer>
 
-<!-- JS -->
-<script src="public/js/lib/jquery.min.js"></script>
-<script src="public/js/lib/bootstrap.min.js"></script>
-<script src="public/js/lib/angular.min.js"></script>
-<script src="public/js/lib/angular-route.js"></script>
-<script src="public/js/lib/angular-translate.js"></script>
-<script src="public/js/lib/angular-translate-loader-url.js"></script>
-<script src="public/js/app/app.js"></script>
-<script src="public/js/app/controllers.js"></script>
-<script src="public/js/app/directives.js"></script>
-<script src="public/js/app/services.js"></script>
+    </footer>
+    <!-- JS -->
+    <script src="public/js/lib.js"></script>
+    <script src="public/js/app.js"></script>
 </body>
 </html>
