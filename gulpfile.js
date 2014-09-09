@@ -8,6 +8,9 @@ var  gulp       = require('gulp')
 
 gulp.task('default', ['css', 'script-lib', 'script-app']);
 
+/*
+ Task (Concat / MinifyCss) the CSS files
+*/
 gulp.task('css', function(){
     gulp.src(['public/css/bootstrap.css', 'public/css/style.css'])
         .pipe(minifyCSS())
@@ -15,6 +18,9 @@ gulp.task('css', function(){
         .pipe(gulp.dest('public/css'));
 });
 
+/*
+ Task (Concat / Uglify) the Lib files
+*/
 gulp.task('script-lib', function(){
    gulp.src([
        'public/js/lib/angular.min.js',
@@ -30,6 +36,9 @@ gulp.task('script-lib', function(){
        .pipe(gulp.dest('public/js'));
 });
 
+/*
+ Task (Concat / Uglify) the APP files
+*/
 gulp.task('script-app', function(){
    gulp.src([
        'public/js/app/app.js',
@@ -45,7 +54,7 @@ gulp.task('script-app', function(){
 
 /*
  Task listen when you change file and execute the task
- */
+*/
 gulp.task('watch', function() {
     gulp.watch(['public/css/bootstrap.css', 'public/css/style.css'], ['css']);
     gulp.watch('public/js/app/**/*.js', ['script-app']);
