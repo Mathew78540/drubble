@@ -33,7 +33,7 @@ services.factory('drubble', function ($http) {
 });
 
 services.factory('languages', function () {
-    return{
+    return {
         languages_available: ['fr', 'en']
     }
 });

@@ -7,18 +7,18 @@ directives.directive('activeLink', function ($location) {
         restrict: 'A',
         link: function (scope, element) {
             scope.$watch(function () {
-                    return $location.path();
-                },
-                function (path) {
-                    var url = element.find('a').attr('href');
+                return $location.path();
+            },
+            function (path) {
+                var url = element.find('a').attr('href');
 
-                    if (url) {
-                        url = url.substring(1);
-                    }
+                if (url) {
+                    url = url.substring(1);
+                }
 
-                    path == url ? element.addClass("active") : element.removeClass('active');
+                path == url ? element.addClass("active") : element.removeClass('active');
 
-                });
+            });
         }
     }
 });
