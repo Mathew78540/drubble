@@ -1,4 +1,12 @@
-Drubble
-=======
+# Drubble
 
-Project using Bootstrap 3 and AngularJS
+## Introduction
+Petit projet utilisant Bootstrap et AngularJS
+
+## Installation
+
+```shell
+npm install -g gulp
+npm install
+gulp
+```
