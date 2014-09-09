@@ -1,1 +1,10 @@
+# IDE
 .idea
+
+# Project
+public/css/main.css
+public/js/app.js
+public/js/lib.js
+
+# NODE
+node_modules
